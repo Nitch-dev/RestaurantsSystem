@@ -18,7 +18,7 @@ class tkinterApp(tk.Tk):
 
         self.frames = {} 
 
-        for F in (WelcomePage, OrderingPage):
+        for F in (WelcomePage, addItem, orderFood):
             frame = F(container, self)
             self.frames[F] = frame
             frame.grid(row = 0, column = 0, sticky ="nsew")
@@ -36,24 +36,47 @@ class WelcomePage(tk.Frame):
         label = ttk.Label(self, text ="W E L C O M E ")
         label.grid(row = 0, column = 4, padx = 10, pady = 10)
   
-        button1 = ttk.Button(self, text ="Ordering Page",
-        command = lambda : controller.show_frame(OrderingPage))
+        button1 = ttk.Button(self, text ="Add Food Items",
+        command = lambda : controller.show_frame(addItem))
+ 
+        button2 = ttk.Button(self, text ="Order Food",
+        command = lambda : controller.show_frame(orderFood))
+
 
         button1.grid(row = 1, column = 1, padx = 10, pady = 10)
 
+        button2.grid(row = 1, column = 2, padx = 10, pady = 10)
 
-class OrderingPage(tk.Frame):
+class addItem(tk.Frame):
      
     def __init__(self, parent, controller):
 
         tk.Frame.__init__(self, parent)
 
-        label = ttk.Label(self, text ="Ordering Page")
+        label = ttk.Label(self, text ="Add Food Item Into DataBase")
         label.grid(row = 0, column = 4, padx = 10, pady = 10)
   
-        button1 = ttk.Button(self, text ="Welcome Page",
+        button1 = ttk.Button(self, text ="<--",
                             command = lambda : controller.show_frame(WelcomePage))
         button1.grid(row = 1, column = 1, padx = 10, pady = 10)
+
+
+
+class orderFood(tk.Frame):
+     
+    def __init__(self, parent, controller):
+
+        tk.Frame.__init__(self, parent)
+
+        label = ttk.Label(self, text ="Order Food")
+        label.grid(row = 0, column = 4, padx = 10, pady = 10)
+  
+        button1 = ttk.Button(self, text ="<--",
+                            command = lambda : controller.show_frame(WelcomePage))
+        button1.grid(row = 1, column = 1, padx = 10, pady = 10)
+
+ 
+
 
   
 app = tkinterApp()
