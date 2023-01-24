@@ -55,7 +55,8 @@ class addItem(tk.Frame):
 
         label = ttk.Label(self, text ="Add Food Item Into DataBase")
         label.grid(row = 0, column = 4, padx = 10, pady = 10)
-  
+        entry1 = tk.Entry(self) 
+        canvas1.create_window(200, 140, window=entry1)
         button1 = ttk.Button(self, text ="<--",
                             command = lambda : controller.show_frame(WelcomePage))
         button1.grid(row = 1, column = 1, padx = 10, pady = 10)
