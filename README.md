@@ -1,7 +1,19 @@
 # RestaurantsSystem
 
-### A Full Resaurant System with 
+### A Full Resaurant System
+# -------------------------
 
-* Full Firebase integrations as databse
+### Tech Stack:
+# ---------------------
+* Sqlite3 as Databse
 * Tkinter for UI 
-* Python as main Language
+* Python as Main Language
+
+### Features:
+# ---------------
+* Admin Panel with Ability to add Food Items and Their Prices
+* Fully Dynamic Coded Backend 
+* Bill Making Ability
+* Open Source (Come Contribute)
+
+# More to Come SOON ! ! ! 
