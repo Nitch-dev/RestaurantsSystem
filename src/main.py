@@ -41,8 +41,6 @@ class WelcomePage(tk.Frame):
  
         button2 = ttk.Button(self, text ="Order Food",
         command = lambda : controller.show_frame(orderFood))
-
-
         button1.grid(row = 1, column = 1, padx = 10, pady = 10)
 
         button2.grid(row = 1, column = 2, padx = 10, pady = 10)
@@ -75,9 +73,6 @@ class orderFood(tk.Frame):
         button1 = ttk.Button(self, text ="<--",
                             command = lambda : controller.show_frame(WelcomePage))
         button1.grid(row = 1, column = 1, padx = 10, pady = 10)
-
- 
-
 
   
 app = tkinterApp()
