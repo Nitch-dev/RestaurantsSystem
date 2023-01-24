@@ -1,8 +1,10 @@
 import tkinter as tk
 from tkinter import ttk
 
+app_name="Restaurants System"
+version="Beta"
+width, height = 720, 480
 
-LARGEFONT =("Verdana", 35)
   
 class tkinterApp(tk.Tk):
      
@@ -16,45 +18,47 @@ class tkinterApp(tk.Tk):
 
         self.frames = {} 
 
-        for F in (StartPage, Page1):
+        for F in (WelcomePage, OrderingPage):
             frame = F(container, self)
             self.frames[F] = frame
             frame.grid(row = 0, column = 0, sticky ="nsew")
 
-        self.show_frame(StartPage)
+        self.show_frame(WelcomePage)
   
     def show_frame(self, cont):
         frame = self.frames[cont]
         frame.tkraise()
 
-class StartPage(tk.Frame):
+class WelcomePage(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
-        label = ttk.Label(self, text ="Startpage", font = LARGEFONT)
+        label = ttk.Label(self, text ="Welcome Page")
         label.grid(row = 0, column = 4, padx = 10, pady = 10)
   
-        button1 = ttk.Button(self, text ="Page 1",
-        command = lambda : controller.show_frame(Page1))
+        button1 = ttk.Button(self, text ="Ordering Page",
+        command = lambda : controller.show_frame(OrderingPage))
 
         button1.grid(row = 1, column = 1, padx = 10, pady = 10)
 
 
-class Page1(tk.Frame):
+class OrderingPage(tk.Frame):
      
     def __init__(self, parent, controller):
-         
+
         tk.Frame.__init__(self, parent)
 
-        label = ttk.Label(self, text ="Page 1", font = LARGEFONT)
+        label = ttk.Label(self, text ="Ordering Page")
         label.grid(row = 0, column = 4, padx = 10, pady = 10)
   
-        button1 = ttk.Button(self, text ="StartPage",
-                            command = lambda : controller.show_frame(StartPage))
+        button1 = ttk.Button(self, text ="Welcome Page",
+                            command = lambda : controller.show_frame(WelcomePage))
         button1.grid(row = 1, column = 1, padx = 10, pady = 10)
 
   
-  
-  
 app = tkinterApp()
+app.title(app_name+f"({version})")
+app.geometry(f"{width}x{height}")
+app.eval('tk::PlaceWindow . center')
+app.minsize(width, height)
 app.mainloop()
