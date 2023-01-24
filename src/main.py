@@ -33,7 +33,7 @@ class WelcomePage(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
-        label = ttk.Label(self, text ="Welcome Page")
+        label = ttk.Label(self, text ="W E L C O M E ")
         label.grid(row = 0, column = 4, padx = 10, pady = 10)
   
         button1 = ttk.Button(self, text ="Ordering Page",
