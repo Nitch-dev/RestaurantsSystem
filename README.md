@@ -5,9 +5,9 @@
 
 ### Tech Stack:
 # ---------------------
-* Sqlite3 as Databse
-* Tkinter for UI 
-* Python as Main Language
+* Language Python
+* Databse Sqlite3
+* UI Tkinter
 
 ### Features:
 # ---------------
