@@ -1,3 +1,4 @@
+
 def validate_name(input):
     if len(input) >= 2:
         return True
