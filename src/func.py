@@ -1,8 +1,8 @@
-
 def validate_name(input):
     if len(input) >= 2:
         return True
     return False
+
 
 def validate_price(input):
     try:
