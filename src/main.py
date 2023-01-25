@@ -1,7 +1,7 @@
 import tkinter as tk
-
 from func import validate_name, validate_price
-
+from backend import *
+import sqlite3
 root = tk
   
 class tkinterApp(root.Tk):
@@ -79,8 +79,8 @@ class addItem(root.Frame):
         elif not validate_price(price):
             label.config(text="Price value must \n be greater then 0")
         else:
-            print(name)
-            print(price + "$")
+            addItemsToDb(name,price)
+
 
 
 
